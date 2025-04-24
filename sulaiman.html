@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arabic Men's Watch Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary-color: #1c1f26;
+      --secondary-color: #ffffff;
+      --accent-color: #a3a3a3;
+      --highlight: #009688;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      overflow-y: scroll;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #2d3139;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 30px 0 10px;
+      color: var(--primary-color);
+    }
+
+    .section-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-info h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .product-info p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .buy-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #000;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Arabic Men's Watch Store</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#">Cart 🛒 <span id="cart-count">0</span></a>
+  </nav>
+
+  <section class="intro">
+    Discover stylish Arabic numeral watches for men. Authentic designs, worldwide shipping, and premium quality.
+  </section>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://cdn2.chrono24.com/images/uhren/17583183-5qp6q07h63q4bhasrhg1x9b4-ExtraLarge.jpg" class="product-image" alt="Seiko 5 Arabic Dial SNKP21J1">
+      <div class="product-info">
+        <h2>Seiko 5 SNKP21J1</h2>
+        <p>₹12,999</p>
+        <button class="buy-button" onclick="addToCart('Seiko 5 SNKP21J1')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="MTZeta Classic.webp" class="product-image" alt="MTZeta Classic Arabic Dial">
+      <div class="product-info">
+        <h2>MTZeta Classic</h2>
+        <p>₹7,499</p>
+        <button class="buy-button" onclick="addToCart('MTZeta Classic')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Helloice Arabic Numerals Watch.jpg" class="product-image" alt="Helloice Arabic Numerals Watch">
+      <div class="product-info">
+        <h2>Helloice Gold</h2>
+        <p>₹3,999</p>
+        <button class="buy-button" onclick="addToCart('Helloice Gold')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Jean Pierre.jpg" class="product-image" alt="Jean Pierre Arabic Dial">
+      <div class="product-info">
+        <h2>Jean Pierre</h2>
+        <p>₹15,499</p>
+        <button class="buy-button" onclick="addToCart('Jean Pierre Arabic')">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="Custom Luxury Arabic Watch.webp" class="product-image" alt="Custom Luxury Arabic Watch">
+      <div class="product-info">
+        <h2>Luxury Custom</h2>
+        <p>₹22,999</p>
+        <button class="buy-button" onclick="addToCart('Luxury Custom Arabic')">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title" id="about">About Us</h2>
+  <div class="section-content">
+    Welcome to Arabic Men's Watch Store – your premier destination for timeless Arabic numeral timepieces. We specialize in curating a refined collection of watches that blend modern craftsmanship with the rich heritage of Arabic culture.
+    <br><br>
+    Our mission is to bring elegance and tradition to your wrist. Whether you're a collector, enthusiast, or shopping for a special gift, we ensure quality, authenticity, and satisfaction in every purchase.
+    <br><br>
+    We ship worldwide and proudly offer watches from Seiko, MTZeta, Helloice, Jean Pierre, and exclusive custom models. Experience the art of Arabic design with us.
+  </div>
+
+  <h2 class="section-title" id="contact">Contact</h2>
+  <div class="section-content">
+    We'd love to hear from you! For any questions, suggestions, or support, reach out using the details below:
+    <ul style="margin-top: 15px; padding-left: 20px;">
+      <li><strong>Email:</strong> support@arabicwatchstore.com</li>
+      <li><strong>Phone:</strong> +91 98765 43210</li>
+      <li><strong>WhatsApp:</strong> +91 98765 43210</li>
+      <li><strong>Address:</strong> 5th Floor, Elite Tower, Dubai Mall Street, UAE</li>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 2025 Arabic Watch Store. This is a demo project. No real orders are taken.
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(productName) {
+      cart.push(productName);
+      document.getElementById("cart-count").textContent = cart.length;
+      alert(`✅ "${productName}" added to your cart!\n(Note: This is a demo. No real orders will be processed.)`);
+    }
+  </script>
+
+</body>
+</html>
